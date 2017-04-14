@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "bstree.h"
 
+
+
 struct bstree *bstree_create(char *key, int value){
 	struct bstree *temp = malloc(sizeof(struct bstree));
 	if (temp == NULL) return NULL;
@@ -36,5 +38,15 @@ void bstree_add(struct bstree *tree, char *key, int value){
 }
 
 struct bstree *bstree_lookup(struct bstree *tree, char *key){
-
+	if (tree){
+		if (tree->key == key)
+			return tree;
+		if (tree->left->key == key)
+			return tree->left;
+		if (tree->right->key == key)
+			return tree->right;
+		bstree_lookup(tree->left, key);
+		bstree_lookup(tree->right, key);
+		
+	}
 }
