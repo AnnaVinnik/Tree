@@ -41,12 +41,17 @@ struct bstree *bstree_lookup(struct bstree *tree, char *key){
 	if (tree){
 		if (tree->key == key)
 			return tree;
-		if (tree->left->key == key)
-			return tree->left;
-		if (tree->right->key == key)
-			return tree->right;
-		bstree_lookup(tree->left, key);
-		bstree_lookup(tree->right, key);
+
+		else{
+		if (tree->left != NULL)
+		struct bstree *temp = bstree_lookup(tree->left, key);
 		
+		if (temp != NULL)
+			return temp;
+		else{
+		if (tree->right != NULL)
+		bstree_lookup(tree->right, key);
+			}
+		}
 	}
 }
