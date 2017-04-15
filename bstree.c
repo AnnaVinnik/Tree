@@ -55,3 +55,20 @@ struct bstree *bstree_lookup(struct bstree *tree, char *key){
 		}
 	
 }
+
+struct bstree *bstree_min(struct bstree *tree){
+  if(tree){
+     if (tree->left == NULL)
+      return tree;
+     
+     else{
+    //  struct bstree *tmp =  bstree_min(tree->left);
+      return tree->right;
+
+     }
+    
+      
+    
+  }
+ 
+}
