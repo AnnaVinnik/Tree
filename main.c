@@ -19,6 +19,9 @@ bstree_add(temp, o, 2);
 struct bstree *min = bstree_min(temp);
 printf("min: %d %s \n", min->value, min->key);
 
+struct bstree *max = bstree_max(temp);
+printf("max: %d %s \n", max->value, max->key);
+
 //struct bstree *rezult = bstree_lookup(temp, i);
 //printf("%d \n", rezult->value);
 

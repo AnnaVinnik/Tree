@@ -68,4 +68,11 @@ return tree;
 
 }
 
+struct bstree *bstree_max(struct bstree *tree){
+	if (tree->right != NULL){
+	struct bstree *tmp = bstree_max(tree->right);
+	return tmp;
+	}
+return tree;
 
+}
