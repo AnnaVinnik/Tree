@@ -42,16 +42,16 @@ struct bstree *bstree_lookup(struct bstree *tree, char *key){
 		if (tree->key == key)
 			return tree;
 
-		else{
-		if (tree->left != NULL)
-		struct bstree *temp = bstree_lookup(tree->left, key);
 		
-		if (temp != NULL)
-			return temp;
-		else{
-		if (tree->right != NULL)
-		bstree_lookup(tree->right, key);
-			}
+		  if (tree->left != NULL){
+		struct bstree *temp = bstree_lookup(tree->left, key);	
+	            if (temp != NULL)
+		      return temp;}
+		 
+		
+		  if (tree->right != NULL){
+		    struct bstree *tmp =  bstree_lookup(tree->right, key);}
+			
 		}
-	}
+	
 }
