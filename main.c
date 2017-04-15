@@ -22,8 +22,8 @@ printf("min: %d %s \n", min->value, min->key);
 struct bstree *max = bstree_max(temp);
 printf("max: %d %s \n", max->value, max->key);
 
-//struct bstree *rezult = bstree_lookup(temp, i);
-//printf("%d \n", rezult->value);
+struct bstree *rezult = bstree_lookup(temp, e);
+printf("%d \n", rezult->value);
 
 //printf("10: %d \n", temp->value);
 //printf("20: %d \n", temp->right->value);

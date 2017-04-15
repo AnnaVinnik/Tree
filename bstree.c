@@ -44,22 +44,22 @@ struct bstree *bstree_lookup(struct bstree *tree, char *key){
 		if (tree->key == key)
 			return tree;
 
-		else{
+		
 		if (tree->left != NULL){
 		struct bstree *temp = bstree_lookup(tree->left, key);
-		
 		if (temp != NULL)
 			return temp;}
-		else{
-		if (tree->right != NULL)
+
+
+		if (tree->right != NULL){
 		bstree_lookup(tree->right, key);
 			}
 		}
 	}
-}
+
 
 struct bstree *bstree_min(struct bstree *tree){
-	if (tree->left != NULL){
+	if (tree->left != NULL) {
 	struct bstree *tmp = bstree_min(tree->left);
 	return tmp;
 	}
