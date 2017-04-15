@@ -4,8 +4,9 @@
 int main(){
 char *k = "k", *a = "a", *b = "b", *c = "c", *d = "d", *e = "e", *i = "i", *f = "f", *l = "l", *m = "m", *o = "o";
 
+
 struct bstree *temp = bstree_create(k, 10);
-bstree_add(temp, b, 20);
+bstree_add(temp, b, 50);
 bstree_add(temp, c, 15);
 bstree_add(temp, d, 7);
 bstree_add(temp, e, 3);
@@ -24,6 +25,7 @@ printf("max: %d %s \n", max->value, max->key);
 
 struct bstree *rezult = bstree_lookup(temp, e);
 printf("%d \n", rezult->value);
+
 
 //printf("10: %d \n", temp->value);
 //printf("20: %d \n", temp->right->value);
