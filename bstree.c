@@ -21,7 +21,6 @@ void bstree_add(struct bstree *tree, char *key, int value){
 		if (value > tree->value){
 			if (tree->right == NULL){
 				struct bstree *right = bstree_create(key, value);
-				printf("right: %d %s tree: %d %s \n", right->value, right->key, tree->value, tree->key);
 				right->parent = tree;
 				tree->right = right;
 				}
@@ -30,7 +29,6 @@ void bstree_add(struct bstree *tree, char *key, int value){
 		else if (value < tree->value){
 			if (tree->left == NULL){
 				struct bstree *left = bstree_create(key, value);
-				printf("left: %d %s tree: %d %s \n", left->value, left->key, tree->value, tree->key); 
 				left->parent = tree;
 				tree->left = left;
 				}
