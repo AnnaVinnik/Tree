@@ -1,41 +1,32 @@
 #include <stdio.h>
 #include "bstree.h"
+#include <locale.h>
 
 int main(){
-char *k = "k", *a = "a", *b = "b", *c = "c", *d = "d", *e = "e", *i = "i", *f = "f", *l = "l", *m = "m", *o = "o";
+char k[5000][30], b;
+int i;
 
 
-struct bstree *temp = bstree_create(k, 10);
-bstree_add(temp, b, 50);
-bstree_add(temp, c, 15);
-bstree_add(temp, d, 7);
-bstree_add(temp, e, 3);
-bstree_add(temp, a, 30);
-bstree_add(temp, i, 25);
-bstree_add(temp, f, 40);
-bstree_add(temp, l, 8);
-bstree_add(temp, m, 9);
-bstree_add(temp, o, 2);
+FILE *f, *f2;
+    f = fopen("text.txt", "r");
+f2 = fopen("text2.txt", "a");
 
-struct bstree *min = bstree_min(temp);
-printf("min: %d %s \n", min->value, min->key);
+    for (i = 0; i < 5000; i++){
+    fscanf(f, "%s", k[i]);
+    }
 
-struct bstree *max = bstree_max(temp);
-printf("max: %d %s \n", max->value, max->key);
-
-struct bstree *rezult = bstree_lookup(temp, e);
-printf("%d \n", rezult->value);
+    struct bstree *tree = bstree_create("k[0]", 0);
+    
+    for (i = 0; i < 5000; i++)
+    bstree_add(tree, k[i], i);
 
 
-//printf("10: %d \n", temp->value);
-//printf("20: %d \n", temp->right->value);
-//printf("15: %d \n", temp->right->left->value);
-//printf("30: %d \n", temp->right->right->value);
-//printf("25: %d \n", temp->right->right->left->value);
-//printf("40: %d \n", temp->right->right->right->value);
-//printf("7: %d \n", temp->left->value);
-//printf("3: %d \n", temp->left->left->value);
+    struct bstree *temp = bstree_lookup(tree, k[120]);
+    printf("%s %s \n", temp->key, k[120]);
+ 
 
+fclose (f);
+fclose (f2);
 
 return 0;
 }
